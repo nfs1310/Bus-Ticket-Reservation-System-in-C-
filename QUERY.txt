@@ -1,0 +1,36 @@
+***************BookTicket Table
+
+CREATE TABLE BookTicket (B_Id varchar(10), UserId varchar(10), 
+LocationFrom varchar(20), LocationTo varchar(20), Date varchar(30), PRIMARY KEY(B_Id, UserId), 
+FOREIGN KEY (UserId) REFERENCES UserInfo(UserId) ON DELETE CASCADE)
+
+DROP TABLE BookTicket
+
+
+
+*************UserInfo Table
+
+CREATE TABLE UserInfo (UserId varchar(10), Name varchar(50), Email varchar(50), 
+Username varchar(50), Password varchar(50), PRIMARY KEY (UserId))
+
+DROP TABLE UserInfo
+
+
+
+**************AdminInfo Table
+CREATE TABLE AdminInfo (AdminId varchar(10), Name varchar(50), Email varchar(50), 
+Username varchar(50), Password varchar(50), PRIMARY KEY (AdminId))
+
+INSERT INTO [AdminInfo] Values ('AD_1', 'NAFEES', 'nfs1310@gmail.com', 'nfs006', '011111006')
+
+DROP TABLE AdminInfo
+
+
+
+*************FairList Table
+CREATE TABLE FairList(ListId varchar(10), LocationFrom varchar(50), LocationTo varchar(50), 
+Price int, AddedOn varchar(50), PRIMARY KEY (ListId))
+
+INSERT INTO FairList Values('F_1', 'DHAKA', 'COXS BAZAR', 1200, '9/12/2014 1:22:27 AM')
+
+DROP TABLE FairList
